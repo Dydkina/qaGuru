@@ -24,7 +24,7 @@ public class FirstTest {
     }
 
     @Test
-    void shouldOpen() {
+    void CheckForm() {
         String[] date = chooseRandomDate();
         String day = date[0];
         String month_year = date[1];
@@ -38,6 +38,7 @@ public class FirstTest {
         String dateOfBirth = day + " " + month_year + "," + year;
         String subjects = "English";
         String hobbies = "Reading";
+        String pic = "kit.jpg";
         String address = "Working with the radio button was difficult";
         String state = "Haryana";
         String city = "Karnal";
@@ -47,34 +48,34 @@ public class FirstTest {
         $("#firstName").setValue(studentName);
         $("#lastName").setValue(studentLastName);
         $("#userEmail").setValue(studentEmail);
-        $(byText(gender)).click();
+        $x("//div[@id='genterWrapper']//*[text()='" + gender + "']").click();
         $("#userNumber").setValue(mobile);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOption(year);
         $(".react-datepicker__month-select").selectOption(month_year);
-        $(byText(day)).click();
+        $x("//div[text()='" + day + "' and (contains(@aria-label,'" + month_year + "'))]").click();
         executeJavaScript(
                 "$('.react-datepicker').hide();"
         );
 
         $(".subjects-auto-complete__value-container").click();
         $("#subjectsInput").setValue(subjects);
-        $("#react-select-2-option-0").click();
-        $(byText(hobbies)).click();
-        $("#uploadPicture").uploadFromClasspath("kit.jpg");
+        $("#subjectsContainer #react-select-2-option-0").click();
+        $("#hobbiesWrapper").$(byText(hobbies)).click();
+        $("#uploadPicture").uploadFromClasspath(pic);
         $("#currentAddress").setValue(address);
         $("#stateCity-wrapper").scrollIntoView(true);
-        $("#stateCity-wrapper").click();
-        $(byText(state)).click();
+        $x("//div[@id='state']").click();
+        $x("//div[@id='state']//*[text()='" + state + "']").click();
         $("#city").click();
-        $(byText(city)).click();
+        $x("//div[@id='city']//*[text()='" + city + "']").click();
 
         $("#submit").click();
 
 
         $(".fade.modal.show").shouldBe(Condition.visible);
         compareValuesWithWeb(studentName + " " + studentLastName, studentEmail, gender, mobile,
-                dateOfBirth, subjects, hobbies, "kit.jpg", address, state + " " + city);
+                dateOfBirth, subjects, hobbies, pic, address, state + " " + city);
     }
 
     private String[] chooseRandomDate() {
@@ -102,7 +103,7 @@ public class FirstTest {
         newCustomerValues.addAll(valuesList);
 
         for (int i = 1; i < valuesList.size(); i++) {
-            $(byXpath("//tr[" + i + "]//td[2]"))
+            $x("//tr[" + i + "]//td[2]")
                         .shouldHave(text(newCustomerValues.get(i-1).toString()));
         }
     }
