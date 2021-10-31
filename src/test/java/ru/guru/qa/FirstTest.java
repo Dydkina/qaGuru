@@ -30,19 +30,17 @@ public class FirstTest {
         String month_year = date[1];
         String year = date[2];
 
-        String studentName, studentLastName, studentEmail, gender, mobile, dateOfBirth, subjects, hobbies, address, state, city;
-
-        studentName = "Petr";
-        studentLastName = "Suslikov";
-        studentEmail = "Test@yandex.ru";
-        gender = "Male";
-        mobile = "7915208217";
-        dateOfBirth = day + " " + month_year + "," + year;
-        subjects = "English";
-        hobbies = "Reading";
-        address = "Working with the radio button was difficult";
-        state = "Haryana";
-        city = "Karnal";
+        String studentName = "Petr";
+        String studentLastName = "Suslikov";
+        String studentEmail = "Test@yandex.ru";
+        String gender = "Male";
+        String mobile = "7915208217";
+        String dateOfBirth = day + " " + month_year + "," + year;
+        String subjects = "English";
+        String hobbies = "Reading";
+        String address = "Working with the radio button was difficult";
+        String state = "Haryana";
+        String city = "Karnal";
 
         open("https://demoqa.com/automation-practice-form");
 
@@ -103,7 +101,7 @@ public class FirstTest {
         List<String> valuesList = Arrays.asList(studentName, studentEmail, gender, mobile, dateOfBirth, subjects, hobbies, picture, address, stateAndcity);
         newCustomerValues.addAll(valuesList);
 
-        for (int i = 1; i < 8; i++) {
+        for (int i = 1; i < valuesList.size(); i++) {
             $(byXpath("//tr[" + i + "]//td[2]"))
                         .shouldHave(text(newCustomerValues.get(i-1).toString()));
         }
