@@ -1,4 +1,4 @@
-package guru.qa.pages;
+package guru.qa.pages.demoqa;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;

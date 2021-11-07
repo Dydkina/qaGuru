@@ -1,5 +1,6 @@
-package guru.qa.pages;
+package guru.qa.pages.demoqa;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.github.javafaker.Faker;
 
@@ -46,6 +47,7 @@ public class RegistrationPage {
     }
 
     SelenideElement firstNameInput = $("#firstName"),
+            pageTitle = $(".practice-form-wrapper"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
             genderRadio = $x("//div[@id='genterWrapper']//*[text()='" + genderValue + "']"),
@@ -65,6 +67,11 @@ public class RegistrationPage {
             cityDropDown = $("#city"),
             cityDropDownElement = $x("//div[@id='city']//*[text()='" + cityValue + "']"),
             submitButton = $("#submit");
+
+    public void openAutomationPracticeForm() {
+        open("https://demoqa.com/automation-practice-form");
+        pageTitle.shouldHave(Condition.text("Student Registration Form"));
+    }
 
     public void fillName() {
         firstNameInput.setValue(firstNameValue);
@@ -144,4 +151,5 @@ public class RegistrationPage {
     public void compareValuesWithWeb() {
         assertEquals(newCustomerValues(), submitForm.submitFormValues());
     }
+
 }

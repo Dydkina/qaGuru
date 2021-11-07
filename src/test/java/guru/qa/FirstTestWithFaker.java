@@ -1,6 +1,6 @@
 package guru.qa;
 
-import guru.qa.pages.RegistrationPage;
+import guru.qa.pages.demoqa.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -11,8 +11,7 @@ public class FirstTestWithFaker extends TestBase {
 
     @Test
     void CheckForm() {
-        open("https://demoqa.com/automation-practice-form");
-        
+        registrationPage.openAutomationPracticeForm();
         registrationPage.fillName();
         registrationPage.fillEmail();
         registrationPage.chooseGender();
