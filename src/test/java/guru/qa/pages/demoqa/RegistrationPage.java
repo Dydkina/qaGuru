@@ -68,64 +68,75 @@ public class RegistrationPage {
             cityDropDownElement = $x("//div[@id='city']//*[text()='" + cityValue + "']"),
             submitButton = $("#submit");
 
-    public void openAutomationPracticeForm() {
+    public RegistrationPage openAutomationPracticeForm() {
         open("https://demoqa.com/automation-practice-form");
         pageTitle.shouldHave(Condition.text("Student Registration Form"));
+        return this;
     }
 
-    public void fillName() {
+    public RegistrationPage fillName() {
         firstNameInput.setValue(firstNameValue);
         lastNameInput.setValue(lastNameValue);
+        return this;
     }
 
-    public void fillEmail() {
-        userEmailInput.setValue(emailValue);
+    public RegistrationPage fillEmail() {
+        userEmailInput.setValue(emailValue);return this;
     }
 
-    public void chooseGender() {
+    public RegistrationPage chooseGender() {
         genderRadio.click();
+        return this;
     }
 
-    public void fillPhoneNumber() {
+    public RegistrationPage fillPhoneNumber() {
         userNumber.setValue(phoneNumber);
+        return this;
     }
 
-    public void setDateOfBirth() {
+    public RegistrationPage setDateOfBirth() {
         dateOfBirthInput.click();
         datepickerYearDropDown.selectOption(year);
         datepickerMonthDropDown.selectOption(month_year);
         datepickerDayPicker.click();
         closeDatePicker();
+        return this;
     }
 
-    public void setSubject() {
+    public RegistrationPage setSubject() {
         subjectsContainer.click();
         subjectsInput.setValue(subjectsValue);
         subjectsDropDown.$(byText(subjectsValue)).click();
+        return this;
     }
 
-    public void chooseHobby() {
+    public RegistrationPage chooseHobby() {
         hobbyChekbox.$((byText(hobbiesValue))).click();
+        return this;
     }
 
-    public void uploadPicture() {
+    public RegistrationPage uploadPicture() {
         fileUpload.uploadFromClasspath(picValue);
+        return this;
     }
 
-    public void fillAddres() {
+    public RegistrationPage fillAddres() {
         addressInput.setValue(addressValue);
+        return this;
     }
 
-    public void selectStateAndCity() {
+    public RegistrationPage selectStateAndCity() {
         stateDropDown.scrollIntoView(true);
         stateDropDown.click();
         stateDropDownElement.click();
         cityDropDown.click();
         cityDropDownElement.click();
+        return this;
     }
 
-    public void submitClick() {
+    public RegistrationPage submitClick() {
         submitButton.click();
+        return this;
     }
 
     private String[] chooseRandomDate() {
@@ -144,12 +155,14 @@ public class RegistrationPage {
         return splitter;
     }
 
-    private void closeDatePicker() {
+    private RegistrationPage closeDatePicker() {
         executeJavaScript("$('.react-datepicker').hide();");
+        return this;
     }
 
-    public void compareValuesWithWeb() {
+    public RegistrationPage compareValuesWithWeb() {
         assertEquals(newCustomerValues(), submitForm.submitFormValues());
+        return this;
     }
 
 }

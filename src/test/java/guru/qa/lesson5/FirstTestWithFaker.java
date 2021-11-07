@@ -12,20 +12,19 @@ public class FirstTestWithFaker extends TestBase {
 
     @Test
     void CheckForm() {
-        registrationPage.openAutomationPracticeForm();
-        registrationPage.fillName();
-        registrationPage.fillEmail();
-        registrationPage.chooseGender();
-        registrationPage.fillPhoneNumber();
-        registrationPage.setDateOfBirth();
-        registrationPage.setSubject();
-        registrationPage.chooseHobby();
-        registrationPage.uploadPicture();
-        registrationPage.fillAddres();
-        registrationPage.selectStateAndCity();
-        registrationPage.submitClick();
-
-        registrationPage.compareValuesWithWeb();
+        registrationPage.openAutomationPracticeForm()
+                .fillName()
+                .fillEmail()
+                .chooseGender()
+                .fillPhoneNumber()
+                .setDateOfBirth()
+                .setSubject()
+                .chooseHobby()
+                .uploadPicture()
+                .fillAddres()
+                .selectStateAndCity()
+                .submitClick()
+                .compareValuesWithWeb();
     }
 
 }
