@@ -1,4 +1,4 @@
-package guru.qa;
+package guru.qa.lesson4;
 
 import guru.qa.pages.gitHub.GitHubSelenidePage;
 import guru.qa.pages.gitHub.GitHubSelenideSoftAssertionsPage;

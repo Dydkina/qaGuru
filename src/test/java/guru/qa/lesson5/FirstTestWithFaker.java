@@ -1,5 +1,6 @@
-package guru.qa;
+package guru.qa.lesson5;
 
+import guru.qa.TestBase;
 import guru.qa.pages.demoqa.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
