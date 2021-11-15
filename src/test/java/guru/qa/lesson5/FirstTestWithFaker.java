@@ -2,14 +2,16 @@ package guru.qa.lesson5;
 
 import guru.qa.TestBase;
 import guru.qa.pages.demoqa.RegistrationPage;
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.Selenide.*;
 
 public class FirstTestWithFaker extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
+    @DisplayName("Check automation form")
+    @Owner("Julia")
     @Test
     void CheckForm() {
         registrationPage.openAutomationPracticeForm()
@@ -21,7 +23,7 @@ public class FirstTestWithFaker extends TestBase {
                 .setSubject()
                 .chooseHobby()
                 .uploadPicture()
-                .fillAddres()
+                .fillAddress()
                 .selectStateAndCity()
                 .submitClick()
                 .compareValuesWithWeb();

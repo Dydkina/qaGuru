@@ -3,6 +3,7 @@ package guru.qa.pages.demoqa;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.github.javafaker.Faker;
+import io.qameta.allure.Step;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -68,32 +69,39 @@ public class RegistrationPage {
             cityDropDownElement = $x("//div[@id='city']//*[text()='" + cityValue + "']"),
             submitButton = $("#submit");
 
+    @Step("Open automation practice form")
     public RegistrationPage openAutomationPracticeForm() {
         open("https://demoqa.com/automation-practice-form");
         pageTitle.shouldHave(Condition.text("Student Registration Form"));
         return this;
     }
 
+    @Step("Fill name field")
     public RegistrationPage fillName() {
         firstNameInput.setValue(firstNameValue);
         lastNameInput.setValue(lastNameValue);
         return this;
     }
 
+    @Step("Fill email field")
     public RegistrationPage fillEmail() {
-        userEmailInput.setValue(emailValue);return this;
+        userEmailInput.setValue(emailValue);
+        return this;
     }
 
+    @Step("Choose gender")
     public RegistrationPage chooseGender() {
         genderRadio.click();
         return this;
     }
 
+    @Step("Fill phone number field")
     public RegistrationPage fillPhoneNumber() {
         userNumber.setValue(phoneNumber);
         return this;
     }
 
+    @Step("Set date of birth")
     public RegistrationPage setDateOfBirth() {
         dateOfBirthInput.click();
         datepickerYearDropDown.selectOption(year);
@@ -103,6 +111,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Set subject")
     public RegistrationPage setSubject() {
         subjectsContainer.click();
         subjectsInput.setValue(subjectsValue);
@@ -110,21 +119,25 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Choose hobby")
     public RegistrationPage chooseHobby() {
         hobbyChekbox.$((byText(hobbiesValue))).click();
         return this;
     }
 
+    @Step("Upload picture")
     public RegistrationPage uploadPicture() {
         fileUpload.uploadFromClasspath(picValue);
         return this;
     }
 
-    public RegistrationPage fillAddres() {
+    @Step("Fill address field")
+    public RegistrationPage fillAddress() {
         addressInput.setValue(addressValue);
         return this;
     }
 
+    @Step("Select state and city")
     public RegistrationPage selectStateAndCity() {
         stateDropDown.scrollIntoView(true);
         stateDropDown.click();
@@ -134,8 +147,15 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Click on 'Submit' button")
     public RegistrationPage submitClick() {
         submitButton.click();
+        return this;
+    }
+
+    @Step("Compare values with Web")
+    public RegistrationPage compareValuesWithWeb() {
+        assertEquals(newCustomerValues(), submitForm.submitFormValues());
         return this;
     }
 
@@ -151,18 +171,14 @@ public class RegistrationPage {
 
         if (splitter[0].startsWith("0")) {
             splitter[0] = splitter[0].replace("0", "");
+            return splitter;
+        } else {
+            return splitter;
         }
-        return splitter;
     }
 
     private RegistrationPage closeDatePicker() {
         executeJavaScript("$('.react-datepicker').hide();");
         return this;
     }
-
-    public RegistrationPage compareValuesWithWeb() {
-        assertEquals(newCustomerValues(), submitForm.submitFormValues());
-        return this;
-    }
-
 }
