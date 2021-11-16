@@ -13,8 +13,8 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class GitHubAllureIssuesPage {
-    SelenideElement pageTab = $x("//a[@id='issues-tab']"),
-            issueLink = $x("//div//a[@id='issue_68_link']");
+    SelenideElement pageTab = $("a#issues-tab"),
+            issueLink = $("div a#issue_68_link");
 
     @Step("Issue number has text 'Listeners NamedBy'")
     public GitHubAllureIssuesPage checkIssueName() {

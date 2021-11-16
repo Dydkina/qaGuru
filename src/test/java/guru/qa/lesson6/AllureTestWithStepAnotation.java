@@ -1,5 +1,6 @@
 package guru.qa.lesson6;
 
+import guru.qa.TestBase;
 import guru.qa.pages.gitHub.*;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -7,7 +8,7 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class AllureTestWithStepAnotation {
+public class AllureTestWithStepAnotation extends TestBase {
     GitHubPage gitHubPage = new GitHubPage();
     GitHubSearchResultPage gitHubSearchResultPage = new GitHubSearchResultPage();
     GitHubAllureExamplePage gitHubAllureExamplePage = new GitHubAllureExamplePage();

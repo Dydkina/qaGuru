@@ -2,6 +2,7 @@ package guru.qa.lesson6;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import guru.qa.TestBase;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
@@ -15,15 +16,15 @@ import static com.codeborne.selenide.Selenide.$x;
 import static org.openqa.selenium.By.linkText;
 import static org.openqa.selenium.By.partialLinkText;
 
-public class AllureTestWithListener {
+public class AllureTestWithListener extends TestBase {
     SelenideElement pageTitle = $x("//h1[text()=' Where the world builds software ']"),
             searchInput = $(".header-search-input"),
-            pageTop = $x("//div[@id='repository-container-header']"),
+            pageTop = $("div#repository-container-header"),
             issuesTab = $(partialLinkText("Issues")),
             pageTopOnSearchPage = $x("//main//input[@aria-label='Search GitHub']"),
             allureExampeleLink = $(linkText("eroshenkoam/allure-example")),
-            pageTab = $x("//a[@id='issues-tab']"),
-            issueLink = $x("//div//a[@id='issue_68_link']");
+            pageTab = $("a#issues-tab"),
+            issueLink = $("div a#issue_68_link");
 
     private static final String LINK = "https://github.com",
             REPOSITORY = "eroshenkoam/allure-example",

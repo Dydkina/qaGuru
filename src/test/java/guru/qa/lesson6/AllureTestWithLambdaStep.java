@@ -1,6 +1,7 @@
 package guru.qa.lesson6;
 
 import com.codeborne.selenide.SelenideElement;
+import guru.qa.TestBase;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,7 @@ import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 import static org.openqa.selenium.By.partialLinkText;
 
-public class AllureTestWithLambdaStep {
+public class AllureTestWithLambdaStep extends TestBase {
     SelenideElement pageTitle = $x("//h1[text()=' Where the world builds software ']"),
             searchInput = $(".header-search-input"),
             pageTop = $x("//div[@id='repository-container-header']"),
