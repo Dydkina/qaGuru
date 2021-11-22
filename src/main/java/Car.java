@@ -2,13 +2,12 @@ public class Car {
 
     private String name;
     private int yearOfProduction;
-    private static int countOfRudder;
     private String whereIsRudder;
+    private static int countOfRudder = 1;
 
     public Car(String name, int yearOfProduction, String whereIsRudder) {
         this.name = name;
         this.yearOfProduction = yearOfProduction;
-        countOfRudder = 1;
         this.whereIsRudder = whereIsRudder;
     }
 
