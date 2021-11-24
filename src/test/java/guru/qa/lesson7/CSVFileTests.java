@@ -22,6 +22,6 @@ public class CSVFileTests extends TestBase {
     @Story("CSV examples on the site")
     void downloadCSVExampleAndCompareValuesWithUsernameCSV() throws IOException, CsvException {
         csvFileExamplesPage.openCSVFileExamplesPage().
-                compareCSVs();
+                compareDownloadedCSVWithExisting();
     }
 }

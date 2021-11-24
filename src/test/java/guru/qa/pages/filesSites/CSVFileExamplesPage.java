@@ -10,7 +10,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
@@ -27,7 +26,7 @@ public class CSVFileExamplesPage {
     }
 
     @Step("Downloaded CSV is equal 'username.csv'")
-    public void compareCSVs() throws IOException, CsvException {
+    public void compareDownloadedCSVWithExisting() throws IOException, CsvException {
         ArrayList downloadedUsernameCSVList = new ArrayList();
 
         try (CSVReader csvReader = new CSVReader(new FileReader(usernameOnboardingDownloadLink.download()))){

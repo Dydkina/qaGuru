@@ -20,6 +20,6 @@ public class XLSFileTests extends TestBase {
     @Story("XLS menu on the site")
     void downloadCSVExampleAndCompareValuesWithUsernameCSVs() throws IOException {
         menuForWeekPage.openMenuPage().
-                XLSContains();
+                downloadedXlsContainsTitle();
     }
 }

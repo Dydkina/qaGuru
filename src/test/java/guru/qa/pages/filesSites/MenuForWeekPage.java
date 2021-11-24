@@ -23,8 +23,8 @@ public class MenuForWeekPage {
         return this;
     }
 
-    @Step("Downloaded XLS title 'Меню  с 02 по 06.11.2019 года'")
-    public void XLSContains() throws IOException {
+    @Step("Downloaded XLS contains title 'Меню  с 02 по 06.11.2019 года'")
+    public void downloadedXlsContainsTitle() throws IOException {
         XLS parsedXls = new XLS(downloadMenuButton.download());
 
         assertThat(parsedXls, containsRow("Меню  с 02 по 06.11.2019 года"));
