@@ -1,36 +1,34 @@
 plugins {
     id 'java-library'
-    id "io.qameta.allure" version "2.9.6"
+    id 'io.qameta.allure' version '2.8.1'
 }
 
 repositories {
     mavenCentral()
 }
 
+def allureVersion = "2.16.0"
+
 dependencies {
     testImplementation (
-            "com.codeborne:selenide:5.25.0",
+            "org.aspectj:aspectjweaver:1.9.7",
+            "com.codeborne:selenide:5.24.0",
             "com.codeborne:pdf-test:1.7.0",
-            'com.codeborne:xls-test:1.2',
+            "com.codeborne:xls-test:1.2",
             "com.opencsv:opencsv:5.5.2",
             "org.junit.jupiter:junit-jupiter:5.8.1",
             "com.github.javafaker:javafaker:1.0.2",
-            'io.qameta.allure:allure-selenide:2.14.0')
+            "io.qameta.allure:allure-selenide:$allureVersion")
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.1"
 }
 
 allure {
-    report {
-        version.set("2.14.0")
-    }
-    adapter {
-        autoconfigure.set(true)
-        aspectjWeaver.set(true)
-        frameworks {
-            junit5 {
-                adapterVersion.set("2.14.0")
-            }
-        }
+    version = allureVersion
+    autoconfigure = true
+    aspectjweaver = true
+    configuration = "testImplementation"
+    useJUnit5 {
+        version = allureVersion
     }
 }
 
