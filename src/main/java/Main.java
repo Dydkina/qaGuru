@@ -10,7 +10,7 @@ public class Main {
         bmw.sayCarName();
 
         mazda.sayCarName();
-        
+
         System.out.println(Car.getCountOfRudder());
     }
 }

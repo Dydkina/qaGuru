@@ -17,9 +17,15 @@ public class GitHubPage {
         return this;
     }
 
-    @Step("Open eroshenkoam/allure-example in search input")
+    @Step("Set eroshenkoam/allure-example in search input")
     public GitHubPage setValueInSearchInput() {
         searchInput.sendKeys("eroshenkoam/allure-example");
+        return this;
+    }
+
+    @Step("Set value in search input")
+    public GitHubPage setValueInSearchInput(String searchValue) {
+        searchInput.sendKeys(searchValue);
         return this;
     }
 
