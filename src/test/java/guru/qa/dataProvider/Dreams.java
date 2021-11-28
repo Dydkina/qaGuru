@@ -1,4 +1,4 @@
-package guru.qa.lesson8.dataProvider;
+package guru.qa.dataProvider;
 
 public enum Dreams {
     ДОМ,
