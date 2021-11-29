@@ -10,9 +10,9 @@ public class FirstTestWithFaker extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
+    @Test
     @DisplayName("Check automation form")
     @Owner("Julia")
-    @Test
     void CheckForm() {
         registrationPage.openAutomationPracticeForm()
                 .fillName()
@@ -28,5 +28,4 @@ public class FirstTestWithFaker extends TestBase {
                 .submitClick()
                 .compareValuesWithWeb();
     }
-
 }
