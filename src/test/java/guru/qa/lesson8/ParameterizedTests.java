@@ -1,7 +1,7 @@
 package guru.qa.lesson8;
 
 import guru.qa.TestBase;
-import guru.qa.lesson8.dataProvider.Dreams;
+import guru.qa.dataProvider.Dreams;
 import guru.qa.pages.DreamBookPage;
 import guru.qa.pages.gitHub.*;
 import org.junit.jupiter.api.DisplayName;
