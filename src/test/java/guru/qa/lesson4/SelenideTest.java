@@ -1,11 +1,12 @@
 package guru.qa.lesson4;
 
+import guru.qa.TestBase;
 import guru.qa.pages.gitHub.GitHubSelenidePage;
 import guru.qa.pages.gitHub.GitHubSelenideSoftAssertionsPage;
 import guru.qa.pages.gitHub.GitHubSelenideWikiPage;
 import org.junit.jupiter.api.Test;
 
-public class SelenideTest {
+public class SelenideTest extends TestBase {
     GitHubSelenidePage gitHubPage = new GitHubSelenidePage();
     GitHubSelenideWikiPage gitHubWikiPage = new GitHubSelenideWikiPage();
     GitHubSelenideSoftAssertionsPage gitHubSoftAssertionsPage = new GitHubSelenideSoftAssertionsPage();
