@@ -4,6 +4,7 @@ import guru.qa.TestBase;
 import guru.qa.pages.demoqa.RegistrationPage;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class FirstTestWithFaker extends TestBase {
@@ -11,6 +12,7 @@ public class FirstTestWithFaker extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
+    @Tag("Critical")
     @DisplayName("Check automation form")
     @Owner("Julia")
     void CheckForm() {
