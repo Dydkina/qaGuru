@@ -18,7 +18,8 @@ public class TestBase {
         Configuration.browser = System.getProperties().getProperty("BROWSER");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setVersion(System.getProperties().getProperty("VERSION"));
+        capabilities.setCapability("browserName", System.getProperties().getProperty("BROWSER"));
+        capabilities.setCapability("browserVersion", System.getProperties().getProperty("VERSION"));
         capabilities.setCapability("name", "Juli S. tests");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
