@@ -1,9 +1,7 @@
-package ru.guru.qa;
+package guru.qa;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import guru.qa.TestBase;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -77,11 +75,6 @@ public class FirstTest extends TestBase {
         $(".fade.modal.show").shouldBe(Condition.visible);
         compareValuesWithWeb(studentName + " " + studentLastName, studentEmail, gender, mobile,
                 dateOfBirth, subjects, hobbies, pic, address, state + " " + city);
-    }
-
-    @Test
-    void someTest(){
-        Assertions.assertTrue(true);
     }
 
     private String[] chooseRandomDate() {
