@@ -13,13 +13,15 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.startMaximized = true;
+
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        Configuration.browser = System.getProperties().getProperty("BROWSER");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setVersion(System.getProperties().getProperty("VERSION"));
         capabilities.setCapability("name", "Juli S. tests");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-        capabilities.setBrowserName(System.getProperties().getProperty("BROWSER"));
 
         Configuration.browserCapabilities = capabilities;}
 
