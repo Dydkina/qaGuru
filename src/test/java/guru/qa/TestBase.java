@@ -17,8 +17,6 @@ public class TestBase {
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName", System.getProperties().getProperty("BROWSER"));
-        capabilities.setCapability("browserVersion", System.getProperties().getProperty("VERSION"));
         capabilities.setCapability("name", "Juli S. tests");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);

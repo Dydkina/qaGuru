@@ -18,6 +18,7 @@ dependencies {
             "com.opencsv:opencsv:5.5.2",
             "org.junit.jupiter:junit-jupiter:5.8.1",
             "com.github.javafaker:javafaker:1.0.2",
+            "org.aeonbits.owner:owner:1.0.12",
             "io.qameta.allure:allure-selenide:$allureVersion")
     testRuntimeOnly(
             "org.slf4j:slf4j-simple:1.7.29",
