@@ -19,7 +19,9 @@ dependencies {
             "org.junit.jupiter:junit-jupiter:5.8.1",
             "com.github.javafaker:javafaker:1.0.2",
             "io.qameta.allure:allure-selenide:$allureVersion")
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.1"
+    testRuntimeOnly(
+            "org.slf4j:slf4j-simple:1.7.29",
+            "org.junit.jupiter:junit-jupiter-engine:5.8.1")
 }
 
 allure {
@@ -40,4 +42,11 @@ test {
     systemProperties(System.getProperties())
     useJUnitPlatform()
     systemProperty "file.encoding", "utf-8"
+}
+
+task properties_tests(type: Test) {
+    systemProperty("browserSize", System.getProperty("browserSize", "400x400"))
+    useJUnitPlatform {
+        includeTags "properties"
+    }
 }
