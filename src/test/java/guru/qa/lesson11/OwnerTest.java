@@ -14,13 +14,15 @@ public class OwnerTest {
 
         @Test
         void readCredentialsTest() {
+            String url = credentials.url();
             String login = credentials.login();
             String password = credentials.password();
 
+            System.out.println(url);
             System.out.println(login);
             System.out.println(password);
 
-            String message = format("i login as %s with password %s", login, password);
+            String message = format("I go to %s and login as %s with password %s", url,  login, password);
             System.out.println(message);
         }
 }
