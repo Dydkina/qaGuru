@@ -14,15 +14,13 @@ public class OwnerTest {
 
      @Test
      void readCredentialsTest() {
-         String url = credentials.url();
          String login = credentials.login();
-           String password = credentials.password();
+         String password = credentials.password();
 
-           System.out.println(url);
-           System.out.println(login);
-           System.out.println(password);
+         System.out.println(login);
+         System.out.println(password);
 
-           String message = format("https://%s:%s@%s", login, password, url);
-           System.out.println(message);
+         String message = format("https://%s:%s@selenoid.autotests.cloud/wd/hub/", login, password);
+         System.out.println(message);
      }
 }
