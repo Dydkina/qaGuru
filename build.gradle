@@ -16,13 +16,13 @@ dependencies {
             "com.codeborne:pdf-test:1.7.0",
             "com.codeborne:xls-test:1.2",
             "com.opencsv:opencsv:5.5.2",
-            "org.junit.jupiter:junit-jupiter:5.8.1",
+            "org.junit.jupiter:junit-jupiter:5.8.2",
             "com.github.javafaker:javafaker:1.0.2",
-            "org.aeonbits.owner:owner:1.0.12",
+            'org.aeonbits.owner:owner:1.0.12',
             "io.qameta.allure:allure-selenide:$allureVersion")
     testRuntimeOnly(
             "org.slf4j:slf4j-simple:1.7.29",
-            "org.junit.jupiter:junit-jupiter-engine:5.8.1")
+            "org.junit.jupiter:junit-jupiter-engine:5.8.2")
 }
 
 allure {
@@ -41,8 +41,8 @@ tasks.withType(JavaCompile) {
 
 test {
     systemProperties(System.getProperties())
-    useJUnitPlatform()
     systemProperty "file.encoding", "utf-8"
+    useJUnitPlatform()
 }
 
 
@@ -52,10 +52,10 @@ tasks.withType(Test) {
     if (System.getProperty("threads") != null) {
         systemProperties += [
                 'junit.jupiter.execution.parallel.enabled'                 : true,
-                 'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
+                'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
                 'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
-                'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
-                'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()
+                'junit.jupiter.execution.parallel.guru.qa.config.strategy' : 'fixed',
+                'junit.jupiter.execution.parallel.guru.qa.config.fixed.parallelism': System.getProperty("threads").toInteger()
         ]
     }
 
