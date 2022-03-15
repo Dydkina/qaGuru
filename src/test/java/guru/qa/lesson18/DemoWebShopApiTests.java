@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class demoWebShopApiTests {
+public class DemoWebShopApiTests {
     DemoWebShopPage demoWebShopPage = new DemoWebShopPage();
 
     @BeforeAll
