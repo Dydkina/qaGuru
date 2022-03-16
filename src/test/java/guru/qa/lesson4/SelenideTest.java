@@ -4,6 +4,7 @@ import guru.qa.TestBase;
 import guru.qa.pages.gitHub.GitHubSelenidePage;
 import guru.qa.pages.gitHub.GitHubSelenideSoftAssertionsPage;
 import guru.qa.pages.gitHub.GitHubSelenideWikiPage;
+import io.qameta.allure.AllureId;
 import org.junit.jupiter.api.Test;
 
 public class SelenideTest extends TestBase {
@@ -12,6 +13,7 @@ public class SelenideTest extends TestBase {
     GitHubSelenideSoftAssertionsPage gitHubSoftAssertionsPage = new GitHubSelenideSoftAssertionsPage();
 
     @Test
+    @AllureId("7765")
     void checkVisibleJunit5CodeExample() {
         gitHubPage.openGitHubSelenide();
         gitHubPage.openWikiPage();

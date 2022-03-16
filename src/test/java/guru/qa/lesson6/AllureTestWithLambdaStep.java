@@ -28,6 +28,7 @@ public class AllureTestWithLambdaStep extends TestBase {
             ISSUE_NAME = "Listeners NamedBy";
 
     @Test
+    @AllureId("7771")
     @Owner("Julia")
     @DisplayName("Check issue name")
     @Feature("GitHub issues have names")

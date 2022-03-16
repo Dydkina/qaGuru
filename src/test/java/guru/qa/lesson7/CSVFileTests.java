@@ -3,6 +3,7 @@ package guru.qa.lesson7;
 import com.opencsv.exceptions.CsvException;
 import guru.qa.TestBase;
 import guru.qa.pages.filesSites.CSVFileExamplesPage;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
@@ -16,6 +17,7 @@ public class CSVFileTests extends TestBase {
     CSVFileExamplesPage csvFileExamplesPage = new CSVFileExamplesPage();
 
     @Test
+    @AllureId("7763")
     @Owner("Julia")
     @DisplayName("Downloaded CSV is equal to username.csv")
     @Feature("CSV example should be displayed on the site")

@@ -24,20 +24,16 @@ public class DemoWebShopPage {
     }
 
     @Step("Add top to cart")
-    public DemoWebShopPage addTopToCartAndCheckSuccessNotification() {
+    public void addTopToCartAndCheckSuccessNotification() {
         open("http://demowebshop.tricentis.com/50s-rockabilly-polka-dot-top-jr-plus-size");
         getWebDriver().manage().addCookie(
                 new Cookie("NOPCOMMERCE.AUTH", getCookie().toString()));
         addToCartButton.click();
         successNotification.shouldBe(Condition.enabled);
-
-        return this;
     }
 
     @Step("API response. Cart contains added top")
-    public DemoWebShopPage checkrAPIResponsGetCartContainsTop() {
+    public void checkrAPIResponsGetCartContainsTop() {
         assertTrue(apiSteps.getProductFromCart().contains("Polka Dot Top JR Plus Size"), "Cart does not contains added top");
-
-        return this;
     }
 }

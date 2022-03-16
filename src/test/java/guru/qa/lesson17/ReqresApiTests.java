@@ -1,5 +1,6 @@
 package guru.qa.lesson17;
 
+import io.qameta.allure.AllureId;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeAll;
@@ -22,6 +23,7 @@ public class ReqresApiTests {
     }
 
     @Test
+    @AllureId("7772")
     @DisplayName("Create user")
     public void createUser() {
         String data = "{ \"name\": \"morpheus\", \"job\": \"leader\" }";
@@ -40,6 +42,7 @@ public class ReqresApiTests {
     }
 
     @Test
+    @AllureId("7749")
     @DisplayName("Update user")
     public void updateUser() {
         String data = "{ \"name\": \"morpheus\", \"job\": \"driver\" }";
@@ -61,6 +64,7 @@ public class ReqresApiTests {
 
 
     @Test
+    @AllureId("7750")
     @DisplayName("Get user")
     public void getUser() {
         String data = "{ \"name\": \"morpheus\", \"job\": \"leader\" }";
@@ -78,6 +82,7 @@ public class ReqresApiTests {
     }
 
     @Test
+    @AllureId("7761")
     @DisplayName("Delete user")
     public void deleteUser() {
         Response response = given()
@@ -90,6 +95,7 @@ public class ReqresApiTests {
     }
 
     @Test
+    @AllureId("7758")
     @DisplayName("Register successful")
     public void registerSuccessful() {
         given()
@@ -103,6 +109,7 @@ public class ReqresApiTests {
     }
 
     @Test
+    @AllureId("7753")
     @DisplayName("Login successful")
     public void loginSuccessful() {
         given()

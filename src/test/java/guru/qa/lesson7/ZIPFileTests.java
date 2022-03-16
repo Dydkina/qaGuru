@@ -1,5 +1,6 @@
 package guru.qa.lesson7;
 
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,6 +13,7 @@ import java.util.zip.ZipInputStream;
 public class ZIPFileTests {
 
     @Test
+    @AllureId("7769")
     @Owner("Julia")
     @DisplayName("Parsing ZIP")
     void parseZipFileTest() throws IOException {

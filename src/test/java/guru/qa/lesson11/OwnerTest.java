@@ -1,6 +1,7 @@
 package guru.qa.lesson11;
 
 import guru.qa.config.CredentialsConfig;
+import io.qameta.allure.AllureId;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,7 @@ public class OwnerTest {
                 ConfigFactory.create(CredentialsConfig.class);
 
      @Test
+     @AllureId("7767")
      void readCredentialsTest() {
          String login = credentials.login();
          String password = credentials.password();

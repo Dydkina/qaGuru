@@ -2,6 +2,7 @@ package guru.qa.lesson6;
 
 import guru.qa.TestBase;
 import guru.qa.pages.gitHub.*;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
@@ -15,6 +16,7 @@ public class AllureTestWithStepAnotation extends TestBase {
     GitHubAllureIssuesPage gitHubAllureIssuesPage = new GitHubAllureIssuesPage();
 
     @Test
+    @AllureId("7764")
     @Owner("Julia")
     @DisplayName("Check issue name")
     @Feature("GitHub issues have names")

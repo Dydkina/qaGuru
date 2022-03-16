@@ -1,6 +1,7 @@
 package guru.qa.lesson18;
 
 import guru.qa.pages.demoWebShop.DemoWebShopPage;
+import io.qameta.allure.AllureId;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -18,6 +19,7 @@ public class DemoWebShopApiTests {
     }
 
     @Test
+    @AllureId("7748")
     @DisplayName("Successful authorization")
     @Tag("API")
     public void successfulAuthTest() {

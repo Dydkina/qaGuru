@@ -22,7 +22,7 @@ public class BlackSwanMainPage {
     }
 
     @Step("Downloaded menu has vegetables")
-    public void downloadedFileHave() throws IOException {
+    public void downloadedFileHasVegetables() throws IOException {
         PDF menuPDF = new PDF(menuDownloadLink.download());
 
         Assertions.assertTrue(menuPDF.text.contains("Овощи из печи"), menuPDF.text);

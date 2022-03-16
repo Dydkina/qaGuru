@@ -4,6 +4,7 @@ import guru.qa.TestBase;
 import guru.qa.dataProvider.Dreams;
 import guru.qa.pages.DreamBookPage;
 import guru.qa.pages.gitHub.*;
+import io.qameta.allure.AllureId;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -19,6 +20,7 @@ public class ParameterizedTests extends TestBase {
     @Tag("minor")
     @DisplayName("Search in github returns repository link")
     @ParameterizedTest
+    @AllureId("7755")
     @ValueSource(strings = {"Dydkina/qaGuru", "eroshenkoam/allure-example"})
     void checkGitHubSearchResults(String valueForSearch) {
         gitHubPage.openGitHub()
@@ -31,6 +33,7 @@ public class ParameterizedTests extends TestBase {
     @Tag("minor")
     @DisplayName("Search in dream book returns searched value")
     @ParameterizedTest(name = "dream=''{0}''")
+    @AllureId("7768")
     @EnumSource(value = Dreams.class)
     void checkDreamBookSearchResults(Dreams dream) throws InterruptedException {
         dreamBookPage.openDdreamBook()
@@ -41,6 +44,7 @@ public class ParameterizedTests extends TestBase {
     @Tag("minor")
     @DisplayName("Search in dream book CSV values returns searched value")
     @ParameterizedTest(name = "dream=''{0}''")
+    @AllureId("7756")
     @CsvFileSource(resources = "/dreams.csv",
     delimiter = ';')
     void checkDreamBookSearchResultsWithCSVValues(String dream) throws InterruptedException {

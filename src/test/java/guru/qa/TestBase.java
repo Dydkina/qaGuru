@@ -22,7 +22,7 @@ public class TestBase {
         Configuration.remote = format("https://%s:%s@%s",
                 credentials.login(),
                 credentials.password(),
-                credentials.url());
+                credentials.remoteuUrl());
     }
 
     @AfterEach

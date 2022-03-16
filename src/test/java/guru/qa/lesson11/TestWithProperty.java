@@ -1,11 +1,13 @@
 package guru.qa.lesson11;
 
+import io.qameta.allure.AllureId;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class TestWithProperty {
 
     @Test
+    @AllureId("7762")
     @Tag("properties")
     void propertyTestFirst() {
         String value = System.getProperty("browser", "chrome");
@@ -13,6 +15,7 @@ public class TestWithProperty {
     }
 
     @Test
+    @AllureId("7759")
     @Tag("properties")
     void propertyTestSecond() {
         String browser = System.getProperty("browser", "chrome");

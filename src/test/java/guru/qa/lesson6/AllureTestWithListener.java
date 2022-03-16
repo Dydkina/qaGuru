@@ -3,6 +3,7 @@ package guru.qa.lesson6;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import guru.qa.TestBase;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
@@ -31,6 +32,7 @@ public class AllureTestWithListener extends TestBase {
             ISSUE_NAME = "Listeners NamedBy";
 
     @Test
+    @AllureId("7766")
     @Owner("Julia")
     @DisplayName("Check issue name")
     @Feature("GitHub issues have names")
